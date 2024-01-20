@@ -1,8 +1,9 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+<div class="header">
 <head>
-    <style>
-        body {
+  <style>
+      body {
     background-color: slategrey;
     padding: 0;
     margin: 0;
@@ -108,38 +109,18 @@ h1 {
     background-color: white;
     padding: 2px;
 }
-    </style>
+  </style>
 </head>
-<div class="header">
-    {% if user.is_authenticated %}
-    <h4><a href="findex">log_out</a></h4>
-    <h3>welcome {{user.username}}</h3>
-    <h1>STORE INFORMATIONS</h1>
-    {% else %}
-    <h1>STORE INFORMATIONS</h1>
-    {% endif %}
-    
+    <h4><a href="login">login</a></h4>
+    <p>logged out was successful</p>
+    <p>please login to start storing informations</p>
 </div>
 
 <div class="app-row">
   <div class="app">
     <div class="form">
-        <form method="POST">
-            {% csrf_token %}
-            <p1>{{myform}}</p1>
-            <p1><input type="submit"></p1>
+        <form>
+            <p1></p1>
         </form>
     </div>
-  
-    {% for pos in posts %}
-    <div class="myapp">
-        <div class="myapp-row">
-            <p1>MESSAGES: {{pos.message}}</p1><br>
-            <p1>CREATED_AT: {{pos.create_at}}</p1><br>
-            <span><a class="hh1" href="update/{{pos.pk}}">update</a></span>
-            <span><a class="pp1" href="delete/{{pos.pk}}">delete</a></span>
-        </div>
-    </div>
-    {% endfor %}
-  </div>
-</div>
+  </div>  
