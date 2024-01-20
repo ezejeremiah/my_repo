@@ -1,6 +1,22 @@
 {% load static %}
-    <h2>login</h2>
-    <link rel="stylesheet" type="text/css" href="{% static 'stac.css' %}">
+    <h2>login</h2>t
+    <link rel="stylesheet" type="tex/css" href="{% static 'stac.css' %}">
+    <head>
+        <style>
+            body {
+    background-color: slategrey;
+}
+.register h4 {
+    color: darkred;
+}
+h4 {
+    color: darkred;
+}
+.input {
+    padding-top: 10px;
+}
+        </style>
+    </head>
     {% for message in messages %}
     <h4>{{message}}</h4>
     {% endfor %}
